@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { useUserStore } from "../store/userStore";
+import { UserStore } from "../store/userStore";
 
 export const userUsers = () => {
-  const { users, loading, fetchUsers } = useUserStore();
+  const { users, loading, fetchUsers } = UserStore();
 
   useEffect(() => {
     fetchUsers();

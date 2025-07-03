@@ -9,7 +9,7 @@ interface UserState {
   addUser: (newUser: Omit<User, "id" | "createdAt">) => Promise<void>;
 }
 
-export const useUserStore = create<UserState>((set) => ({
+export const UserStore = create<UserState>((set) => ({
   users: [],
   loading: false,
   fetchUsers: async () => {
