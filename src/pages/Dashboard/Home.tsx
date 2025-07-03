@@ -1,9 +1,9 @@
 import StatisticsChart from "../../components/ecommerce/StatisticsChart";
 import RecentOrders from "../../components/ecommerce/RecentOrders";
 import DemographicCard from "../../components/ecommerce/DemographicCard";
-import MonthlyRegistrationChart from "../../components/ecommerce/MonthlyRegistrationChart";
 import TotalUserMetrics from "../../components/ecommerce/TotalUserMetrics";
 import UserTypeRatioChart from "../../components/ecommerce/UserTypeRatioChart";
+import MonthlyRegistrationChart from "../../components/ecommerce/MonthlyRegistrationChart";
 
 export default function Home() {
   return (

@@ -21,34 +21,40 @@ import UserTables from "./pages/User/page/BasicTables";
 import UserForm from "./pages/User/components/UserForm";
 import MechanicTables from "./pages/Mechanic/Mechanic";
 import MechanicForm from "./pages/Mechanic/components/MechanicForm";
+import UserDetail from "./pages/User/components/UserDetail";
+import UserList from "./pages/User/components/UserList";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
   return (
     <>
       <Router>
         <ScrollToTop />
+        <ToastContainer position="bottom-center" autoClose={3000} />
         <Routes>
           {/* Dashboard Layout */}
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Home />} />
-
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/blank" element={<Blank />} />
-
             {/* Forms */}
             <Route path="/form-elements" element={<FormElements />} />
-
             {/* User Tables */}
             <Route path="/user-tables" element={<UserTables />} />
             <Route path="/user-form" element={<UserForm />} />
+            <Route path="/user-form/:id" element={<UserForm />} />
 
+            {/* firebase */}
+
+            <Route path="/user" element={<UserList />} />
+            <Route path="/user/:id" element={<UserDetail />} />
             {/* Mechanic Tables */}
             <Route path="/mechanic-tables" element={<MechanicTables />} />
             <Route path="/mechanic-form" element={<MechanicForm />} />
             <Route path="/mechanic-form/:id" element={<MechanicForm />} />
-
             {/* Ui Elements */}
             <Route path="/alerts" element={<Alerts />} />
             <Route path="/avatars" element={<Avatars />} />
@@ -56,7 +62,6 @@ export default function App() {
             <Route path="/buttons" element={<Buttons />} />
             <Route path="/images" element={<Images />} />
             <Route path="/videos" element={<Videos />} />
-
             {/* Charts */}
             <Route path="/line-chart" element={<LineChart />} />
             <Route path="/bar-chart" element={<BarChart />} />
