@@ -12,12 +12,13 @@ import {
   PageIcon,
   PieChartIcon,
   PlugInIcon,
-  TableIcon,
   UserCircleIcon,
   UserIcon,
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
 import SidebarWidget from "./SidebarWidget";
+import { FaHamburger, FaHandsHelping, FaServicestack, FaToolbox, FaTools } from "react-icons/fa";
+import { MdConstruction, MdOutlinePanTool } from "react-icons/md";
 
 type NavItem = {
   name: string;
@@ -33,14 +34,26 @@ const navItems: NavItem[] = [
     path: "/",
   },
 
+  // {
+  //   name: "User",
+  //   icon: <UserIcon />,
+  //   subItems: [
+  //     { name: "Service User", path: "/user-tables", pro: false },
+  //     { name: "Service Provider", path: "/mechanic-tables", pro: false },
+  //   ],
+  // },
   {
-    name: "User",
     icon: <UserIcon />,
-    subItems: [
-      { name: "Service User", path: "/user-tables", pro: false },
-      { name: "Service Provider", path: "/mechanic-tables", pro: false },
-    ],
+    name: "Service User",
+    path: "/user-tables",
   },
+
+  {
+    icon: <MdConstruction />,
+    name: "Service User",
+    path: "/mechanic-tables",
+  },
+
   {
     icon: <CalenderIcon />,
     name: "Calendar",
@@ -235,7 +248,9 @@ const AppSidebar: React.FC = () => {
               }}
               className="overflow-hidden transition-all duration-300"
               style={{
-                height:
+                overflow: "hidden",
+                transition: "max-height 0.3s ease",
+                maxHeight:
                   openSubmenu?.type === menuType && openSubmenu?.index === index
                     ? `${subMenuHeight[`${menuType}-${index}`]}px`
                     : "0px",

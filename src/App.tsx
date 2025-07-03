@@ -25,6 +25,7 @@ import UserDetail from "./pages/User/components/UserDetail";
 import UserList from "./pages/User/components/UserList";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import MechanicDetail from "./pages/Mechanic/components/MechanicDetail";
 
 export default function App() {
   return (
@@ -51,6 +52,8 @@ export default function App() {
 
             <Route path="/user" element={<UserList />} />
             <Route path="/user/:id" element={<UserDetail />} />
+            <Route path="/mechanic/:id" element={<MechanicDetail />} />
+            
             {/* Mechanic Tables */}
             <Route path="/mechanic-tables" element={<MechanicTables />} />
             <Route path="/mechanic-form" element={<MechanicForm />} />
