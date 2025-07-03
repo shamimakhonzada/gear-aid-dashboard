@@ -118,6 +118,7 @@ import {
 import { useEffect, useState } from "react";
 import { db } from "../../../firebase";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 export default function UserList() {
   // const { users, loading } = userUsers();
@@ -162,19 +163,35 @@ export default function UserList() {
 
   const handleView = (userId: string) => navigate(`/user/${userId}`);
   const handleDelete = async (userId: string) => {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this user?"
-    );
-    if (!confirmDelete) return;
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          await remove(ref(db, `Users/Service User/${userId}`));
+          setUsers((prev) => prev.filter((user) => user.userId !== userId));
 
-    try {
-      await remove(ref(db, `Users/Service User/${userId}`));
-      setUsers((prev) => prev.filter((user) => user.userId !== userId));
-      toast.success("User deleted successfully.");
-    } catch (error) {
-      console.error("Error deleting user:", error);
-      toast.error("Failed to delete user.");
-    }
+          Swal.fire({
+            title: "Deleted!",
+            text: "User has been deleted.",
+            icon: "success",
+            timer: 1500,
+            showConfirmButton: false,
+          });
+
+          toast.success("User deleted successfully.");
+        } catch (error) {
+          console.error("Error deleting user:", error);
+          toast.error("Failed to delete user.");
+        }
+      }
+    });
   };
   return (
     <ComponentCard
