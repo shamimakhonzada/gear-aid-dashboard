@@ -229,7 +229,6 @@ export default function MechanicList() {
     currentPage * itemsPerPage
   );
   const handleView = (id: string) => navigate(`/mechanic/${id}`);
-  const handleEdit = (id: string) => navigate(`/mechanic-form/${id}`);
   const handleDelete = async (id: string) => {
     Swal.fire({
       title: "Are you sure?",
@@ -391,8 +390,9 @@ export default function MechanicList() {
                         </button>
                         <button
                           title="Edit"
-                          onClick={() => navigate(`/mechanic-form/${mech.userId}`)}
-
+                          onClick={() =>
+                            navigate(`/mechanic-form/${mech.userId}`)
+                          }
                           className="p-2 rounded-full hover:bg-yellow-100 dark:hover:bg-yellow-900/20 text-yellow-600 dark:text-yellow-400"
                         >
                           <MdEdit className="text-xl" />

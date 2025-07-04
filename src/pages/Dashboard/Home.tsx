@@ -1,9 +1,9 @@
-import StatisticsChart from "../../components/ecommerce/StatisticsChart";
-import RecentOrders from "../../components/ecommerce/RecentOrders";
-import DemographicCard from "../../components/ecommerce/DemographicCard";
-import TotalUserMetrics from "../../components/ecommerce/TotalUserMetrics";
-import UserTypeRatioChart from "../../components/ecommerce/UserTypeRatioChart";
-import MonthlyRegistrationChart from "../../components/ecommerce/MonthlyRegistrationChart";
+import StatisticsChart from "../../components/dashboard/StatisticsChart";
+import TotalUserMetrics from "../../components/dashboard/TotalUserMetrics";
+import UserTypeRatioChart from "../../components/dashboard/UserTypeRatioChart";
+import MonthlyRegistrationChart from "../../components/dashboard/MonthlyRegistrationChart";
+import TopCitiesChart from "../../components/dashboard/TopCitiesChart";
+import MechanicRatingChart from "../../components/dashboard/MechanicRatingChart";
 
 export default function Home() {
   return (
@@ -20,14 +20,19 @@ export default function Home() {
 
         <div className="col-span-12">
           <StatisticsChart />
+          
         </div>
 
         <div className="col-span-12 xl:col-span-5">
-          <DemographicCard />
+          {/* <DemographicCard /> */}
+          <TopCitiesChart/>
+           
         </div>
 
         <div className="col-span-12 xl:col-span-7">
-          <RecentOrders />
+          {/* <RecentOrders /> */}
+          
+          <MechanicRatingChart/>
         </div>
       </div>
     </>

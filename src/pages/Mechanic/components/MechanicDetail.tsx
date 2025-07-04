@@ -91,6 +91,16 @@ export default function MechanicDetail() {
     );
   }
 
+  function formatTo12Hour(time24: string): string {
+    const [hourStr, minute] = time24.split(":");
+    const hour = parseInt(hourStr, 10);
+
+    const ampm = hour >= 12 ? "PM" : "AM";
+    const hour12 = hour % 12 || 12;
+
+    return `${hour12}:${minute} ${ampm}`;
+  }
+
   return (
     <ComponentCard
       title="Mechanic Details"
@@ -161,7 +171,9 @@ export default function MechanicDetail() {
           label="Timings"
           value={
             mechanic.Details?.timeFrom && mechanic.Details?.timeTo
-              ? `${mechanic.Details.timeFrom} - ${mechanic.Details.timeTo}`
+              ? `${formatTo12Hour(
+                  mechanic.Details.timeFrom
+                )} - ${formatTo12Hour(mechanic.Details.timeTo)}`
               : "—"
           }
         />

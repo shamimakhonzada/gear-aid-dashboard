@@ -6,7 +6,6 @@ import {
   BoxCubeIcon,
   CalenderIcon,
   ChevronDownIcon,
-  GridIcon,
   HorizontaLDots,
   ListIcon,
   PageIcon,
@@ -17,7 +16,7 @@ import {
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
 import SidebarWidget from "./SidebarWidget";
-import { MdConstruction } from "react-icons/md";
+import { MdConstruction, MdOutlineAnalytics } from "react-icons/md";
 
 type NavItem = {
   name: string;
@@ -28,8 +27,8 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   {
-    icon: <GridIcon />,
-    name: "Dashboard",
+    icon: <MdOutlineAnalytics />,
+    name: "Analytics",
     path: "/",
   },
 
@@ -49,7 +48,7 @@ const navItems: NavItem[] = [
 
   {
     icon: <MdConstruction />,
-    name: "Service User",
+    name: "Service Provider",
     path: "/mechanic-tables",
   },
 
