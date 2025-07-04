@@ -17,8 +17,7 @@ import {
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
 import SidebarWidget from "./SidebarWidget";
-import { FaHamburger, FaHandsHelping, FaServicestack, FaToolbox, FaTools } from "react-icons/fa";
-import { MdConstruction, MdOutlinePanTool } from "react-icons/md";
+import { MdConstruction } from "react-icons/md";
 
 type NavItem = {
   name: string;
