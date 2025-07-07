@@ -26,6 +26,8 @@ import UserList from "./pages/User/components/UserList";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MechanicDetail from "./pages/Mechanic/components/MechanicDetail";
+import ChatDetail from "./components/chats/ChatDetail";
+import ChatsTables from "./pages/Chats/Chat";
 
 export default function App() {
   return (
@@ -53,11 +55,19 @@ export default function App() {
             <Route path="/user" element={<UserList />} />
             <Route path="/user/:id" element={<UserDetail />} />
             <Route path="/mechanic/:id" element={<MechanicDetail />} />
-            
+
             {/* Mechanic Tables */}
             <Route path="/mechanic-tables" element={<MechanicTables />} />
             <Route path="/mechanic-form" element={<MechanicForm />} />
             <Route path="/mechanic-form/:id" element={<MechanicForm />} />
+
+            {/* Chats Tables */}
+            <Route path="/chat-tables" element={<ChatsTables />} />
+            <Route
+              path="/admin/chat/:mechanicId/:userId"
+              element={<ChatDetail />}
+            />
+
             {/* Ui Elements */}
             <Route path="/alerts" element={<Alerts />} />
             <Route path="/avatars" element={<Avatars />} />

@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router";
 // Assume these icons are imported from an icon library
 import {
   BoxCubeIcon,
-  CalenderIcon,
+  ChatIcon,
   ChevronDownIcon,
   HorizontaLDots,
   ListIcon,
@@ -16,7 +16,7 @@ import {
 } from "../icons";
 import { useSidebar } from "../context/SidebarContext";
 import SidebarWidget from "./SidebarWidget";
-import { MdConstruction, MdOutlineAnalytics } from "react-icons/md";
+import {MdConstruction, MdOutlineAnalytics } from "react-icons/md";
 
 type NavItem = {
   name: string;
@@ -53,9 +53,9 @@ const navItems: NavItem[] = [
   },
 
   {
-    icon: <CalenderIcon />,
-    name: "Calendar",
-    path: "/calendar",
+    icon: <ChatIcon />,
+    name: "Chat",
+    path: "/chat-tables",
   },
   {
     icon: <UserCircleIcon />,
